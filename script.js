@@ -10,12 +10,12 @@ btn.addEventListener('click',()=>{
 
 const promise1=()=>{
 	return new Promise((resolve,reject)=>{
-		output.innerHTML ='';
+		output.innerHTML = '';
 		const delayValue = Number(delay.value);
 		setTimeout(()=>{
 			output.innerHTML = text.value;
 			resolve('promise1')
-		},delay)
+		},delayValue)
 	})
 }
 
@@ -24,5 +24,6 @@ async function handlePromise(){
 		await promise1()
 	} catch (error) {
 		console.log('error',error)
+		output.innerHTML = 'An error occurred';
 	}
 }
